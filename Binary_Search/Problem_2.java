@@ -9,8 +9,8 @@ public class Problem_2 {
         while (st <= end) {
             int mid = (st+end)/2;
             if (arr[mid] == target) {
-                end = mid - 1;
                 idx = mid;
+                end = mid - 1;
             }
             else if (arr[mid] < target){
                 st = mid+1;
