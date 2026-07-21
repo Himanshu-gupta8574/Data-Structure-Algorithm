@@ -1,20 +1,18 @@
 package Binary_Search;
 
-// index of minimum element in rotated arrar
-
-public class problem_3 {
+public class problem_6 {
     public static void main(String[] args) {
-        int arr[] = {5,6,7,8,9,10,1,3,2,4};
+        int arr[] = {2,4,10,7,3,1,0};
         int st = 0;
         int end = arr.length-1;
         int ans = -1;
         while (st <= end) {
             int mid = (st+end)/2;
-            if (arr[mid] > arr[end]) {
+            if (arr[mid]<arr[mid+1]) {
+                ans = mid;
                 st = mid+1;
             }
-            else if (arr[mid] <= arr[end]) {
-                ans = mid;
+            else{
                 end = mid-1;
             }
         }
