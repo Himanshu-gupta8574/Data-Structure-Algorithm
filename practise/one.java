@@ -1,15 +1,18 @@
 package practise;
 public class one {
-    public static int fact(int n){
-        if (n==1 ||  n==0) {
-            return 1;
-        }
-        int  tact = fact(n-1);
-        int tact1 = n*tact;
-        return tact1;
-        
-    }
     public static void main(String[] args) {
-        System.out.println(fact(5));
+        int arr[] = {1,343,23,423,32,342};
+        for(int i=0;i<arr.length;i++){
+            for(int j=1;j<arr.length-i;j++){
+                if (arr[j-1]> arr[j]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j-1];
+                    arr[j-1]= temp;
+                }
+            }
+        }
+        for(int i=0;i<arr.length;i++){
+            System.out.println(arr[i]);
+        }
     }
 }
