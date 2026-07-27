@@ -1,5 +1,7 @@
 package Hash_Map;
 
+//index of target sum
+
 import java.util.HashMap;
 import java.util.Map;
 
