@@ -1,0 +1,46 @@
+package Hash_Map;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class problem_7 {
+
+    public static boolean wordPattern(String pattern, String s) {
+
+        String[] words = s.split(" ");
+
+        if (pattern.length() != words.length) {
+            return false;
+        }
+
+        Map<Character, String> mp1 = new HashMap<>();
+        Map<String, Character> mp2 = new HashMap<>();
+
+        for (int i = 0; i < pattern.length(); i++) {
+
+            char ch = pattern.charAt(i);
+            String word = words[i];
+
+            if (mp1.containsKey(ch) && !mp1.get(ch).equals(word)) {
+                return false;
+            }
+
+            if (mp2.containsKey(word) && mp2.get(word) != ch) {
+                return false;
+            }
+
+            mp1.put(ch, word);
+            mp2.put(word, ch);
+        }
+
+        return true;
+    }
+
+    public static void main(String[] args) {
+
+        String pattern = "abba";
+        String s = "dog cat cat dog";
+
+        System.out.println(wordPattern(pattern, s));
+    }
+}
